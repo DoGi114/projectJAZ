@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   		<!-- Bootstrap -->
+    	<link href="Resources/navbar/css/bootstrap.min.css" rel="stylesheet"/>
+    	<link href="Resources/css/default.css" rel="stylesheet"/>
+     <title><ui:insert name="windowTitle"></ui:insert>
+        </title>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</h:head>
+<h:body>
+  <h:outputStylesheet library="css" name="Resources/navbar/css/bootstrap.min.css" target="body" /> 
+        
+        <div>
+         <div>
+         <ui:insert name="menu">
+         <ui:include src="/menu.xhtml" />
+       </ui:insert>
+      </div>
+         <div class="content">
+         <ui:insert name="content" />
+       </div>
+        </div>
+</h:body>
+</html>
