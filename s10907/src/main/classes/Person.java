@@ -1,9 +1,12 @@
 package main.classes;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Person {
+public class Person extends EntitiBase {
 
+	private int id;
 	private String name;
 	private String Surname;
 	private String pin;
@@ -14,6 +17,20 @@ public class Person {
 
 	public Person(){
 	}
+
+	
+	
+	public int getId() {
+		return id;
+	}
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
 
 	public String getName() {
 		return name;
@@ -59,9 +76,14 @@ public class Person {
 		return DateOfBirth;
 	}
 
-	public void setDateOfBirth(Date dateOfBirth) {
-		DateOfBirth = dateOfBirth;
+	public void setDateOfBirth(Date dateOfBirth) throws ParseException {
+		this.DateOfBirth = dateOfBirth;
 	}
 
+	public Date convertToDate(String date) throws ParseException{
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		Date dateOfBirth = sdf.parse(date);
+		return dateOfBirth;
+	}
 	
 }

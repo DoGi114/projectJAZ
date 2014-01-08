@@ -7,7 +7,7 @@ import main.classes.Position;
 public interface PositionManagerInt {
 
 	void addPosition(Position position) throws SQLException;
-	void deletePosition(Position position);
-	void updatePosition(Position position);
-	void getAll();
+	void deletePosition(Position position) throws SQLException;
+	void updateSallary(Position position) throws SQLException;
+	void getAll() throws SQLException;
 }
