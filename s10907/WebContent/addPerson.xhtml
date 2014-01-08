@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        template="/Templates/default.xhtml">
+        <ui:define name="content">
+                
+           	<h:form id="personform">
+					<h:panelGrid columns="2">
+
+					 	<h:outputText value="#{msg.name}" />
+						<h:inputText id="name" value="#{personBean.person.name}" />
+						
+						<h:outputText value="#{msg.surname}" />
+						<h:inputText id="surname" value="#{personBean.person.surname}" />
+						
+						<h:outputText value="#{msg.dateOfBirth}" />
+						<h:inputText id="dateOfBirth" value="#{personBean.person.dateOfBirth}" >
+						<f:converter converterId="date"></f:converter>
+						</h:inputText>
+						
+						<h:outputText value="#{msg.phoneNr}" />
+						<h:inputText id="phoneNr" value="#{personBean.person.phoneNr}" />
+		
+						<h:outputText value="#{msg.pin}" />
+						<h:inputText id="pin" value="#{personBean.person.pin}" />
+						
+						<h:outputText value="#{msg.positionId}" />
+						<h:inputText id="positionId" value="#{personBean.person.positionId}" />
+						
+					</h:panelGrid>
+		
+					<h:commandButton value="#{msg.ok}" action="#{personBean.addPerson}" />
+						
+					<h:panelGrid>
+						<h:messages showDetail="#{true}" showSummary="#{false}" />
+					</h:panelGrid>
+			</h:form>
+                
+        </ui:define>
+</ui:composition>
