@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        template="/Templates/default.xhtml">
+        <ui:define name="content">
+           <table>
+           	<tr>
+           	<td>
+           	<h:form>
+				<h:panelGrid columns="3">
+					
+					<h:outputText value="#{msg.deletePositionById}" />
+					<h:inputText value="#{positionBean.position.id}" />
+			
+			
+					<h:commandButton value="#{msg.ok}" action="#{positionBean.deletePosition}" />
+
+				</h:panelGrid>
+				
+				<h:panelGrid>
+					<h:messages showDetail="#{true}" showSummary="#{false}" />
+				</h:panelGrid>
+			</h:form>
+           	</td>
+           	<td>
+           	</td>
+           	</tr>
+           </table>    
+        </ui:define>
+</ui:composition>

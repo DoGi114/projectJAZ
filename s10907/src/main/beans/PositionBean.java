@@ -3,15 +3,16 @@ package main.beans;
 import java.io.Serializable;
 import java.sql.SQLException;
 
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.ManagedBean;
+import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
-import javax.inject.Named;
 
 import main.classes.Position;
 import main.implementations.PositionManagerPSQL;
 
-@SessionScoped
-@Named("positionBean")
+@RequestScoped
+@ManagedBean(name="positionBean")
 public class PositionBean implements Serializable {
 
 	/**
@@ -21,6 +22,17 @@ public class PositionBean implements Serializable {
 
 	private Position position = new Position();
 	
+	private ListDataModel<Position> positions = new ListDataModel<Position>();
+	
+	public ListDataModel<Position> getPositions() {
+		return positions;
+	}
+
+	public void setPositions(ListDataModel<Position> positions) {
+		this.positions = positions;
+	}
+
+
 	@Inject
 	private PositionManagerPSQL pm;
 	
@@ -32,12 +44,22 @@ public class PositionBean implements Serializable {
 		this.position = position;
 	}
 	
-	public void getAll() throws SQLException{
-		pm.getAll();
+	public String getAll() throws SQLException{
+		positions.setWrappedData(pm.getAll());
+		return "getPositions";
+		
 	}
 	
 	public String addPosition() throws SQLException{
 		pm.addPosition(position);
+		positions.setWrappedData(pm.getAll());
+		return null;
+	}
+	
+	
+	public String deletePosition() throws SQLException{
+		pm.deletePosition(position);
+		positions.setWrappedData(pm.getAll());
 		return null;
 	}
 }

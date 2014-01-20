@@ -6,10 +6,13 @@
         template="/Templates/default.xhtml">
         <ui:define name="content">
                 
-           	<h:form id="personform">
+           	<h:form>
 					<h:panelGrid columns="2">
 
-					 	<h:outputText value="#{msg.positionName}" />
+					 	<h:outputText value="#{msg.positionId}" />
+						<h:inputText value="#{positionBean.position.id}" />
+						
+						<h:outputText value="#{msg.positionName}" />
 						<h:inputText value="#{positionBean.position.name}" />
 						
 						<h:outputText value="#{msg.positionSallary}" />

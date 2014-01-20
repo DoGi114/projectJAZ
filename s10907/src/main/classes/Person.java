@@ -14,11 +14,6 @@ public class Person extends EntitiBase {
 	private int positionId;
 	private Date DateOfBirth;
 	
-
-	public Person(){
-	}
-
-	
 	
 	public int getId() {
 		return id;

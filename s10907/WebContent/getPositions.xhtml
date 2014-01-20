@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        template="/Templates/default.xhtml">
+        <ui:define name="content">
+                
+            <table>
+            <tr>
+            <td width="350">
+            <h:form>
+            <h:dataTable border="1" value="#{positionBean.positions}" var="item">			      
+					      <h:column>
+					        <f:facet name="header">#{msg.positionId}</f:facet>
+					        #{item.id}
+					      </h:column>
+					      
+					      <h:column>
+					        <f:facet name="header">#{msg.positionName}</f:facet>
+					        #{item.name}
+					      </h:column>
+					      
+					      <h:column>
+					        <f:facet name="header">#{msg.positionSallary}</f:facet>
+					        #{item.sallary}
+					      </h:column>
+					      
+					     </h:dataTable>
+					     </h:form>
+            </td>
+            <td>
+            <p align="center"><b>Usuwanie stanowiska po id:</b></p>
+            <h:form>
+				<h:panelGrid columns="2">
+					
+					<h:outputText value="#{msg.positionId}" />
+					<h:inputText value="#{positionBean.position.id}">
+					<f:validateDoubleRange minimum="1" />
+					</h:inputText>
+					<h:commandButton value="#{msg.ok}" action="#{positionBean.deletePosition}" />
+
+				</h:panelGrid>
+				
+				<h:panelGrid>
+					<h:messages showDetail="#{true}" showSummary="#{false}" />
+				</h:panelGrid>
+			</h:form>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            
+            </td>
+            <td>
+            <p align="center"><b>Dodawanie stanowiska: </b></p>
+            <h:form>
+					<h:panelGrid columns="2">
+
+					 	<h:outputText value="#{msg.positionId}" />
+						<h:inputText value="#{positionBean.position.id}">
+							<f:validateDoubleRange minimum="1" />
+						</h:inputText>
+						
+						<h:outputText value="#{msg.positionName}" />
+						<h:inputText value="#{positionBean.position.name}">
+							<f:validateLength minimum="3" maximum="12" />
+						</h:inputText>
+						
+						<h:outputText value="#{msg.positionSallary}" />
+						<h:inputText value="#{positionBean.position.sallary}">
+							<f:validateDoubleRange minimum="1200" maximum="40000" />
+						</h:inputText>
+						
+					</h:panelGrid>
+		
+					<h:commandButton value="#{msg.ok}" action="#{positionBean.addPosition}" />
+						
+					<h:panelGrid>
+						<h:messages showDetail="#{true}" showSummary="#{false}" />
+					</h:panelGrid>
+			</h:form>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            </td>
+            <td>
+            <p align="center"><b>Zmień pensję na danym stanowisku: </b></p>
+            <h:form>
+            	<h:panelGrid>
+            		<h:outputText value="#{"></h:outputText>
+            	</h:panelGrid>
+            </h:form>
+            </td>
+            </tr>
+            </table>    
+           	
+					
+                
+        </ui:define>
+</ui:composition>

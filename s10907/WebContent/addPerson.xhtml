@@ -8,6 +8,9 @@
                 
            	<h:form id="personform">
 					<h:panelGrid columns="2">
+					
+						<h:outputText value="#{msg.id}" />
+						<h:inputText id="id" value="#{personBean.person.id}" />
 
 					 	<h:outputText value="#{msg.name}" />
 						<h:inputText id="name" value="#{personBean.person.name}" />
@@ -17,7 +20,7 @@
 						
 						<h:outputText value="#{msg.dateOfBirth}" />
 						<h:inputText id="dateOfBirth" value="#{personBean.person.dateOfBirth}" >
-						<f:converter converterId="date"></f:converter>
+				 		<f:convertDateTime type="date" pattern="dd-MM-yyyy" />
 						</h:inputText>
 						
 						<h:outputText value="#{msg.phoneNr}" />

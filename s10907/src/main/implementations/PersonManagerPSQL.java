@@ -30,7 +30,7 @@ public class PersonManagerPSQL implements PersonManagerInt {
 			
 			dbConnection = PSQL.getConnection();
 			statement = dbConnection.createStatement();
-			String addPerson = "insert into person(name, surname, date_of_birth, pin, phone_number, position_id) values ('"+ person.getName() +"' , '"+ person.getSurname() +"' , '"+ person.getDateOfBirth()  +"' , '"+ person.getPin()  +"' , '"+ person.getPhoneNr()  +"' , '"+ person.getPositionId() +"')";    
+			String addPerson = "insert into person(id_person, name, surname, date_of_birth, pin, phone_number, position_id) values ('"+ person.getId()+ "' , '"+ person.getName() +"' , '"+ person.getSurname() +"' , '"+ person.getDateOfBirth()  +"' , '"+ person.getPin()  +"' , '"+ person.getPhoneNr()  +"' , '"+ person.getPositionId() +"')";    
 			statement.executeUpdate(addPerson);  
 		} catch (SQLException e) {
  
