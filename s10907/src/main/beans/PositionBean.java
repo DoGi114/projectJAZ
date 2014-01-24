@@ -53,13 +53,13 @@ public class PositionBean implements Serializable {
 	public String addPosition() throws SQLException{
 		pm.addPosition(position);
 		positions.setWrappedData(pm.getAll());
-		return null;
+		return "getPosition";
 	}
 	
 	
 	public String deletePosition() throws SQLException{
 		pm.deletePosition(position);
 		positions.setWrappedData(pm.getAll());
-		return null;
+		return "getPosition";
 	}
 }

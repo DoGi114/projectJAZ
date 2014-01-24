@@ -5,6 +5,15 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>Project</name>
 	<description>Project for java</description>
+	<repositories>
+	<repository>
+	<id>prime-repo</id>
+	<name>PrimeFaces Maven Repository</name>
+	<url>http://repository.primefaces.org</url>
+	<layout>default</layout>
+	</repository>
+	</repositories>
+	
 	<dependencies>
 	<dependency>
 			<groupId>com.sun.faces</groupId>
@@ -45,6 +54,14 @@
 			<artifactId>postgresql</artifactId>
 			<version>9.2-1003-jdbc4</version>
 		</dependency>
+		
+		<dependency>
+	<groupId>org.primefaces</groupId>
+	<artifactId>primefaces</artifactId>
+	<version>4.0</version>
+</dependency>
+		
+		
 		<dependency>
 	<groupId>junit</groupId>
 	<artifactId>junit</artifactId>
